@@ -9,7 +9,7 @@ import ListProduct from "../ListProduct/ListProduct";
 const Dashboard = () => {
   const products = useLoaderData();
   const [cart, setCart] = useState(true);
-  const [sort, setSort] = useState("Price");
+  const [sort, setSort] = useState("");
   const [wishList, setWishList] = useState([]);
   const [cartList, setCartList] = useState([]);
   const [cartTotal, setCartTotal] = useState();
@@ -51,6 +51,17 @@ const Dashboard = () => {
       setCartList(newCartList);  
     }
   };
+  const handleSort=(sortBy)=>{
+     setSort(sortBy);
+     if(sortBy=== 'Price'){
+       const sortedCartList=[...cartList].sort((a,b)=>b.price-a.price);
+       setCartList(sortedCartList);
+     }
+     else if(sortBy === 'Rating'){
+      const sortedCartList=[...cartList].sort((a,b)=>b.rating-a.rating);
+      setCartList(sortedCartList);
+     }
+  }
 
   return (
     <div className="bg-base-200 pb-10">
@@ -101,10 +112,10 @@ const Dashboard = () => {
                     tabIndex={0}
                     className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                   >
-                    <li onClick={() => setSort("Price")}>
+                    <li onClick={() => handleSort("Price")}>
                       <a>Price</a>
                     </li>
-                    <li onClick={() => setSort("Rating")}>
+                    <li onClick={() => handleSort("Rating")}>
                       <a>Rating</a>
                     </li>
                   </ul>
