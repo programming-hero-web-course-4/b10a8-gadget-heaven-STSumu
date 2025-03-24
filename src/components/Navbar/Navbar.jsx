@@ -5,9 +5,9 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links=<>
-        <li><NavLink>Home</NavLink> </li>
-        <li><NavLink>Statistics</NavLink></li>
-        <li><NavLink>Dashboard</NavLink></li>
+        <li><NavLink to='/'>Home</NavLink> </li>
+        <li><NavLink to='/statistics'>Statistics</NavLink></li>
+        <li><NavLink to='/dashboard'>Dashboard</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -19,7 +19,7 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        
+        {links}
       </ul>
     </div>
     <a className="btn btn-ghost text-xl"><img src='favicon-16x16.png'></img>Gadget Heaven</a>
@@ -34,9 +34,8 @@ const Navbar = () => {
     <IoCartOutline />
     </button>
     <button className="btn btn-ghost btn-circle">
-      <div className="indicator">
+      <div>
       <MdFavoriteBorder />
-        <span className="badge badge-xs badge-primary indicator-item"></span>
       </div>
     </button>
   </div>

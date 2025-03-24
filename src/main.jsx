@@ -9,6 +9,7 @@ import Root from './components/Root/Root.jsx';
 import Home from './components/Home/Home.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
+import Dashboard from './components/Dashboard/Dashboard.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
         element:<ProductDetails></ProductDetails>,
         loader:()=>fetch('/products.json'),
       },
+      {
+        path:'/dashboard',
+        element:<Dashboard></Dashboard>,
+        loader:()=>fetch('/products.json'),
+      }
     ]
   },
 ]);

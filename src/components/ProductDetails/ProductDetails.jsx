@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { addToList } from "../../assets/functions/listChange";
+import { addToList, getList } from "../../assets/functions/listChange";
 
 const ProductDetails = () => {
+  const [wishListed,setWishListed]=useState();
+  
   const params = useParams();
   const { productId } = params;
   const id = parseInt(productId);
   const products = useLoaderData();
   const product = products.find((product) => product.product_id === id);
-  
+
   const { product_title, product_image, rating, price, specifications } =
     product;
-  const handleAdd=(list)=>{
-    addToList(list,id);
-  }
+    useEffect(() => {
+      const wishList = getList("wish-list");
+      setWishListed(wishList.includes(id));
+    }, []);
+  
+    const handleAdd = (list) => {
+      addToList(list, id);
+      if (list === "wish-list") {
+        setWishListed(true);
+      }
+    };
   return (
     <div className="flex flex-col justify-center items-center mb-[500px] md:mb-80">
       <div className="h-[375px] relative bg-[#9538E2] w-full text-center text-white flex flex-col gap-2 lg:gap-4 items-center pt-10">
@@ -61,7 +71,7 @@ const ProductDetails = () => {
           </div>
           <div className="card-actions">
             <button className="btn bg-[#9538E2] text-white rounded-4xl" onClick={()=>handleAdd('cart-list')}>Add to cart<IoCartOutline/></button>
-            <button className="btn rounded-full" onClick={()=>handleAdd('wish-list')}><MdOutlineFavoriteBorder className="text-lg"/></button>
+            <button className={`btn rounded-full ${wishListed? 'text-[#9538E2] ': ''}`} onClick={()=>handleAdd('wish-list')} disabled={wishListed}><MdOutlineFavoriteBorder className="text-lg"/></button>
           </div>
         </div>
       </div>
