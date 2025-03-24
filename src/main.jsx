@@ -10,6 +10,7 @@ import Home from './components/Home/Home.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
+import Compare from './components/Compare/Compare.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
       {
         path:'/dashboard',
         element:<Dashboard></Dashboard>,
+        loader:()=>fetch('/products.json'),
+      },
+      {
+        path:'/compare',
+        element:<Compare></Compare>,
         loader:()=>fetch('/products.json'),
       }
     ]

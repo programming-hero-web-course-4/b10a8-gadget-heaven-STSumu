@@ -6,24 +6,30 @@ import { addToList, getList } from "../../assets/functions/listChange";
 
 const ProductDetails = () => {
   const [wishListed,setWishListed]=useState();
-  
+  const [compare,setCompare]=useState();
+
   const params = useParams();
   const { productId } = params;
   const id = parseInt(productId);
   const products = useLoaderData();
   const product = products.find((product) => product.product_id === id);
 
-  const { product_title, product_image, rating, price, specifications } =
+  const { product_title, product_image, rating, price, specifications,availability } =
     product;
     useEffect(() => {
+      const compareList=getList("compare");
       const wishList = getList("wish-list");
       setWishListed(wishList.includes(id));
+      setCompare(compareList.includes(id));
     }, []);
   
     const handleAdd = (list) => {
       addToList(list, id);
       if (list === "wish-list") {
         setWishListed(true);
+      }
+      else if(list === "compare"){
+        setCompare(true);
       }
     };
   return (
@@ -43,7 +49,7 @@ const ProductDetails = () => {
           <div className="space-y-2">
           <h2 className="card-title md:text-3xl">{product_title}</h2>
           <p>Price : {price}$</p>
-          <span className="border border-green-300 bg-green-200 rounded-xl p-1">In stock</span>
+          <span className="border border-green-300 bg-green-200 rounded-xl p-1">{availability? 'In Stock' : 'Stock Out'}</span>
           </div>
           <div className="space-y-2">
             <h5 className="font-bold">Specification:</h5>
@@ -71,6 +77,7 @@ const ProductDetails = () => {
           </div>
           <div className="card-actions">
             <button className="btn bg-[#9538E2] text-white rounded-4xl" onClick={()=>handleAdd('cart-list')}>Add to cart<IoCartOutline/></button>
+            <button className={`btn  rounded-4xl ${compare? 'text-gray-400 ': 'bg-[#9538E2] text-white'}`} onClick={()=>handleAdd('compare')} disabled={compare} >Compare</button>
             <button className={`btn rounded-full ${wishListed? 'text-[#9538E2] ': ''}`} onClick={()=>handleAdd('wish-list')} disabled={wishListed}><MdOutlineFavoriteBorder className="text-lg"/></button>
           </div>
         </div>

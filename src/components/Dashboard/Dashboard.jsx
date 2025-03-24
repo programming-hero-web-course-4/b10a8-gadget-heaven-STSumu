@@ -35,19 +35,20 @@ const Dashboard = () => {
     removeFromList(list, id);
 
     if (list === "wish-list") {
-      const newWishList = wishList.filter(
+      const newWishList = [...wishList].filter(
         (product) => product.product_id != id
       );
       setWishList(newWishList);
-    } else {
-      const newCartList = cartList.filter(
+    } 
+    else if(list === "cart-list")
+    {
+      const newCartList = [...cartList].filter(
         (product) => product.product_id != id
       );
       let newtotal=0;
       newCartList.forEach((product)=>newtotal+=product.price);
       setCartTotal(newtotal);
-      setCartList(newCartList);
-      
+      setCartList(newCartList);  
     }
   };
 
