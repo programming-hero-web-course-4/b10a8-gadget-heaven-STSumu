@@ -11,6 +11,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Compare from './components/Compare/Compare.jsx';
+import { Bounce, Slide, ToastContainer} from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -43,5 +44,16 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
      <RouterProvider router={router} />
+     <ToastContainer position="top-center"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Slide}/>
   </StrictMode>,
 )
