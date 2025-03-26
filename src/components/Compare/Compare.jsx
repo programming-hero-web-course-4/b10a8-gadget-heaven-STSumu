@@ -3,6 +3,7 @@ import { getList } from "../../assets/functions/listChange";
 import { useLoaderData } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
 import { addToList, removeFromList } from "../../assets/functions/listChange";
+import { Helmet} from 'react-helmet-async';
 
 const Compare = () => {
     const [compareList,setCompareList]=useState([]);
@@ -25,6 +26,10 @@ const Compare = () => {
     }
   return (
     <div className="bg-base-100">
+      <Helmet>
+              <title>Compare | Gadget heaven</title>
+              <meta name="description" content="Welcome to my homepage!" />
+            </Helmet>
       <div className="h-[200px] bg-[#9538E2] w-full text-center text-white flex flex-col gap-2 lg:gap-4 items-center pt-10">
         <h2 className="text-2xl md:text-4xl font-bold">Compare</h2>
         <p className="w-3/4 md:w-1/2 text-sm md:text-base">

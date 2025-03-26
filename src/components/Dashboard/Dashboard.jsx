@@ -3,9 +3,10 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { FaSortAmountDown } from "react-icons/fa";
 import { getList, removeFromList } from "../../assets/functions/listChange";
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import ListProduct from "../ListProduct/ListProduct";
 import { MdVerified } from "react-icons/md";
+import { Helmet} from 'react-helmet-async';
 
 const Dashboard = () => {
   const products = useLoaderData();
@@ -68,10 +69,15 @@ const Dashboard = () => {
        removeFromList('cart-list',item.product_id);
     }
     setCartList([]);
-  }
+  };
+  const navigate=useNavigate();
 
   return (
     <div className="bg-base-200 pb-10">
+      <Helmet>
+              <title>Dashboard | Gadget heaven</title>
+              <meta name="description" content="Welcome to my homepage!" />
+            </Helmet>
       <div className="h-[256px] bg-[#9538E2] w-full text-center text-white flex flex-col gap-2 lg:gap-4 items-center pt-10">
         <h2 className="text-2xl md:text-4xl font-bold">Dashboard</h2>
         <p className="w-3/4 md:w-1/2 text-sm md:text-base">
@@ -135,6 +141,7 @@ const Dashboard = () => {
                     handleBuy();
                   }
                   }
+                  disabled={cartTotal===0 ? true : false}
                 >
                   Purchase
                 </button>
@@ -149,7 +156,9 @@ const Dashboard = () => {
                     <div className="">
                       <form method="dialog">
                         {/* if there is a button in form, it will close the modal */}
-                        <button className="btn" onClick={()=>{ setCartTotal(0);}}>Close</button>
+                        <button className="btn" onClick={()=>{ setCartTotal(0);
+                          navigate('/');
+                        }}>Close</button>
                       </form>
                     </div>
                   </div>

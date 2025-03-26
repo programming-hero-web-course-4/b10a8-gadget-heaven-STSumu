@@ -5,3 +5,6 @@
     font-weight: medium;
     font-size: 16px;
 }
+.menu a{
+    border-radius: 16px;
+}

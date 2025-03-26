@@ -15,8 +15,8 @@ const Banner = () => {
           </p>
           <button className="btn bg-white text-[#9538E2] rounded-4xl">Shop Now</button>
         </div>
-        <div className="absolute w-3/4 p-2 md:p-5 bg-gray-300/50 border-2 border-gray-400 rounded-4xl top-2/3">
-          <img src="/banner.jpg" className="rounded-3xl" alt="" />
+        <div className="absolute w-3/4 p-2 md:p-5 bg-gray-300/40 border-4 border-white rounded-4xl top-2/3 h-[611px]">
+          <img src="/banner.jpg" className="rounded-3xl object-cover h-full w-full" alt="" />
         </div>
       </div>
     </div>
