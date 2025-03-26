@@ -12,6 +12,28 @@
   },
   {
     "product_id": 2,
+    "product_title": "Mi 30,000mAh Power Bank",
+    "product_image": "../src/assets/productsimg/Xiaomi-Power-Bank-3-30000mAh-Type-C-18W-Fast-Charging-1.jpg",
+    "category": "Accessories",
+    "price": 89,
+    "description": "A massive power bank for extended charging needs.",
+    "specifications": ["30,000mAh", "USB-C PD", "Fast charging"],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": 3,
+    "product_title": "Garmin Fenix 7",
+    "product_image": "../src/assets/productsimg/garmin-fenix-7.jpg",
+    "category": "Smartwatch",
+    "price": 699,
+    "description": "A rugged smartwatch built for outdoor adventures.",
+    "specifications": ["Solar charging", "GPS", "Fitness tracking"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 4,
     "product_title": "iPhone 14 Pro",
     "product_image": "../src/assets/productsimg/iPhone_14.jpg",
     "category": "Phone",
@@ -21,19 +43,9 @@
     "availability": true,
     "rating": 4.9
   },
+ 
   {
-    "product_id": 3,
-    "product_title": "Google Pixel 7",
-    "product_image": "../src/assets/productsimg/pixel.jpg",
-    "category": "Phone",
-    "price": 599,
-    "description": "Google's flagship phone with AI-powered camera enhancements.",
-    "specifications": ["6.3-inch OLED", "Tensor G2", "128GB storage"],
-    "availability": true,
-    "rating": 4.7
-  },
-  {
-    "product_id": 4,
+    "product_id": 5,
     "product_title": "OnePlus 11",
     "product_image": "../src/assets/productsimg/OnePlus-11-(3)-4957.jpg",
     "category": "Phone",
@@ -44,27 +56,17 @@
     "rating": 4.6
   },
   {
-    "product_id": 5,
-    "product_title": "Xiaomi Mi 12",
-    "product_image": "../src/assets/productsimg/XIAOMI-12-(4)-6074.jpg",
-    "category": "Phone",
-    "price": 649,
-    "description": "A feature-rich phone with a stunning display and strong performance.",
-    "specifications": ["6.81-inch OLED", "Snapdragon 8 Gen 1", "128GB storage"],
-    "availability": true,
-    "rating": 4.5
-  },
-  {
     "product_id": 6,
-    "product_title": "Sony Xperia 1 IV",
-    "product_image": "../src/assets/productsimg/sony-xperia-1-iv-.jpg",
-    "category": "Phone",
-    "price": 1199,
-    "description": "A premium phone with pro-grade camera technology.",
-    "specifications": ["6.5-inch 4K OLED", "Snapdragon 8 Gen 1", "512GB storage"],
-    "availability": false,
-    "rating": 4.3
+    "product_title": "RavPower 20,000mAh Power Bank",
+    "product_image": "../src/assets/productsimg/rav.jpg",
+    "category": "Accessories",
+    "price": 79,
+    "description": "A high-capacity power bank for charging multiple devices.",
+    "specifications": ["20,000mAh", "Fast Charging", "Dual Output"],
+    "availability": true,
+    "rating": 4.7
   },
+ 
   {
     "product_id": 7,
     "product_title": "MacBook Pro 16",
@@ -100,6 +102,28 @@
   },
   {
     "product_id": 10,
+    "product_title": "Google Pixel 7",
+    "product_image": "../src/assets/productsimg/pixel.jpg",
+    "category": "Phone",
+    "price": 599,
+    "description": "Google's flagship phone with AI-powered camera enhancements.",
+    "specifications": ["6.3-inch OLED", "Tensor G2", "128GB storage"],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 11,
+    "product_title": "Xiaomi Mi 12",
+    "product_image": "../src/assets/productsimg/XIAOMI-12-(4)-6074.jpg",
+    "category": "Phone",
+    "price": 649,
+    "description": "A feature-rich phone with a stunning display and strong performance.",
+    "specifications": ["6.81-inch OLED", "Snapdragon 8 Gen 1", "128GB storage"],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 12,
     "product_title": "Asus ROG Zephyrus G14",
     "product_image": "../src/assets/productsimg/zephyrus-g14.jpg",
     "category": "Laptop",
@@ -110,7 +134,7 @@
     "rating": 4.6
   },
   {
-    "product_id": 11,
+    "product_id": 13,
     "product_title": "Apple Watch Series 8",
     "product_image": "../src/assets/productsimg/Apple-Watch-Series-8.jpg",
     "category": "Smartwatch",
@@ -121,7 +145,7 @@
     "rating": 4.9
   },
   {
-    "product_id": 12,
+    "product_id": 14,
     "product_title": "Samsung Galaxy Watch 5",
     "product_image": "../src/assets/productsimg/Samsung-Galaxy-Watch-5-Gray-44mm.jpg",
     "category": "Smartwatch",
@@ -131,19 +155,9 @@
     "availability": true,
     "rating": 4.8
   },
+  
   {
-    "product_id": 13,
-    "product_title": "Garmin Fenix 7",
-    "product_image": "../src/assets/productsimg/garmin-fenix-7.jpg",
-    "category": "Smartwatch",
-    "price": 699,
-    "description": "A rugged smartwatch built for outdoor adventures.",
-    "specifications": ["Solar charging", "GPS", "Fitness tracking"],
-    "availability": true,
-    "rating": 4.7
-  },
-  {
-    "product_id": 14,
+    "product_id": 15,
     "product_title": "Fossil Gen 6",
     "product_image": "../src/assets/productsimg/fossil-ftw4062v--2.jpg",
     "category": "Smartwatch",
@@ -154,7 +168,7 @@
     "rating": 4.5
   },
   {
-    "product_id": 15,
+    "product_id": 16,
     "product_title": "Anker 65W Charger",
     "product_image": "../src/assets/productsimg/Anker-735-Charger---Nano-II-65W-Black-2414.jpg",
     "category": "Accessories",
@@ -165,18 +179,18 @@
     "rating": 4.8
   },
   {
-    "product_id": 16,
-    "product_title": "RavPower 20,000mAh Power Bank",
-    "product_image": "../src/assets/productsimg/rav.jpg",
-    "category": "Accessories",
-    "price": 79,
-    "description": "A high-capacity power bank for charging multiple devices.",
-    "specifications": ["20,000mAh", "Fast Charging", "Dual Output"],
-    "availability": true,
-    "rating": 4.7
+    "product_id": 17,
+    "product_title": "Sony Xperia 1 IV",
+    "product_image": "../src/assets/productsimg/sony-xperia-1-iv-.jpg",
+    "category": "Phone",
+    "price": 1199,
+    "description": "A premium phone with pro-grade camera technology.",
+    "specifications": ["6.5-inch 4K OLED", "Snapdragon 8 Gen 1", "512GB storage"],
+    "availability": false,
+    "rating": 4.3
   },
   {
-    "product_id": 17,
+    "product_id": 18,
     "product_title": "Baseus 100W USB-C Charger",
     "product_image": "../src/assets/productsimg/Baseus.jpg",
     "category": "Accessories",
@@ -185,16 +199,6 @@
     "specifications": ["100W Power", "Multiple ports", "Compact design"],
     "availability": true,
     "rating": 4.6
-  },
-  {
-    "product_id": 18,
-    "product_title": "Mi 30,000mAh Power Bank",
-    "product_image": "../src/assets/productsimg/Xiaomi-Power-Bank-3-30000mAh-Type-C-18W-Fast-Charging-1.jpg",
-    "category": "Accessories",
-    "price": 89,
-    "description": "A massive power bank for extended charging needs.",
-    "specifications": ["30,000mAh", "USB-C PD", "Fast charging"],
-    "availability": false,
-    "rating": 4.5
   }
+  
 ]

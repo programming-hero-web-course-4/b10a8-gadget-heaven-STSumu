@@ -12,6 +12,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails.jsx';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Compare from './components/Compare/Compare.jsx';
 import { Bounce, Slide, ToastContainer} from 'react-toastify';
+import Statistics from './components/Statistics/Statistics.jsx';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path:'/compare',
         element:<Compare></Compare>,
         loader:()=>fetch('/products.json'),
+      },
+      {
+        path:'/statistics',
+        element:<Statistics></Statistics>,
       }
     ]
   },

@@ -1,8 +1,8 @@
 import React from 'react';
 import { IoCartOutline } from "react-icons/io5";
 import { MdFavoriteBorder } from "react-icons/md";
-import { NavLink } from 'react-router-dom';
-
+import { NavLink} from 'react-router-dom';
+import './Navbar.css'
 const Navbar = () => {
     const links=<>
         <li><NavLink to='/'>Home</NavLink> </li>

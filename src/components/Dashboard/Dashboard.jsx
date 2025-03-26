@@ -5,6 +5,7 @@ import { FaSortAmountDown } from "react-icons/fa";
 import { getList, removeFromList } from "../../assets/functions/listChange";
 import { useLoaderData } from "react-router-dom";
 import ListProduct from "../ListProduct/ListProduct";
+import { MdVerified } from "react-icons/md";
 
 const Dashboard = () => {
   const products = useLoaderData();
@@ -31,6 +32,7 @@ const Dashboard = () => {
     setWishList(wishProducts);
     setCartList(cartProducts);
   }, []);
+  
   const handleRemove = (list, id) => {
     removeFromList(list, id);
 
@@ -39,28 +41,33 @@ const Dashboard = () => {
         (product) => product.product_id != id
       );
       setWishList(newWishList);
-    } 
-    else if(list === "cart-list")
-    {
+    } else if (list === "cart-list") {
       const newCartList = [...cartList].filter(
         (product) => product.product_id != id
       );
-      let newtotal=0;
-      newCartList.forEach((product)=>newtotal+=product.price);
+      let newtotal = 0;
+      newCartList.forEach((product) => (newtotal += product.price));
       setCartTotal(newtotal);
-      setCartList(newCartList);  
+      setCartList(newCartList);
     }
   };
-  const handleSort=(sortBy)=>{
-     setSort(sortBy);
-     if(sortBy=== 'Price'){
-       const sortedCartList=[...cartList].sort((a,b)=>b.price-a.price);
-       setCartList(sortedCartList);
-     }
-     else if(sortBy === 'Rating'){
-      const sortedCartList=[...cartList].sort((a,b)=>b.rating-a.rating);
+
+  const handleSort = (sortBy) => {
+    setSort(sortBy);
+    if (sortBy === "Price") {
+      const sortedCartList = [...cartList].sort((a, b) => b.price - a.price);
       setCartList(sortedCartList);
-     }
+    } else if (sortBy === "Rating") {
+      const sortedCartList = [...cartList].sort((a, b) => b.rating - a.rating);
+      setCartList(sortedCartList);
+    }
+  };
+
+  const handleBuy=()=>{
+    for(const item of cartList){
+       removeFromList('cart-list',item.product_id);
+    }
+    setCartList([]);
   }
 
   return (
@@ -120,7 +127,33 @@ const Dashboard = () => {
                     </li>
                   </ul>
                 </div>
-                <button className={`${bg} btn rounded-3xl`}>Purchase</button>
+                {/* Open the modal using document.getElementById('ID').showModal() method */}
+                <button
+                  className={`${bg} btn rounded-3xl`}
+                  onClick={() =>{
+                    document.getElementById("my_modal_1").showModal();
+                    handleBuy();
+                  }
+                  }
+                >
+                  Purchase
+                </button>
+                <dialog id="my_modal_1" className="modal">
+                  <div className="modal-box w-72 md:w-96 text-center flex flex-col gap-2">
+                    <MdVerified className="text-green-400 text-6xl mx-auto" />
+                    <h3 className="font-bold text-lg md:text-2xl">Payment Successfully</h3>
+                    <p className="md:py-2 text-sm md:text-lg opacity-60">
+                      Thanks for purchasing.<br></br>
+                      Total: {cartTotal} $
+                    </p>
+                    <div className="">
+                      <form method="dialog">
+                        {/* if there is a button in form, it will close the modal */}
+                        <button className="btn" onClick={()=>{ setCartTotal(0);}}>Close</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
               </div>
             </div>
             <div className="flex flex-col gap-3 md:gap-6 mt-8">
